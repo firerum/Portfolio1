@@ -1,17 +1,43 @@
-:root {
-    
-}
-
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+/* GENERAL STYLE */
+
 body {
     font-family: "raleway", sans-serif;
     font-size: 1rem;
 }
+
+a {
+    color: #fff;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 0.2em;
+    font-weight: 700;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    border-bottom: 1px solid rgba(0,0,0,.25);
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    opacity: .8;  
+}
+
+
+
+/* HEADER */
 
 .banner {
     background-color: rgba(0,0,0,.45);
@@ -35,29 +61,75 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    border-bottom: 1px solid #000;
-    //box-shadow: 2px 2px 40px rgba(25,255,25);
 }
 
-.banner-logo h1 a {
+.banner-logo > h1 > a {
     font-weight: 900;
-    //margin-left: 1em;
     font-size: 2.5rem;
     text-shadow: 2px 2px 20px;
     letter-spacing: 1px;
 }
 
-.banner-logo label {
-    font-size: 2rem;
-    font-weight: 900;
-    color: #fff;
-    padding: 0 0.2em;
-    box-shadow: 1px 1px 30px rgba(0,0,0,.85);
+.banner #toggler {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 5px;
+    z-index: 20;
+    opacity: 0;
     cursor: pointer;
 }
 
-.banner #toggler {
-    display: none;
+.banner .hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 5px;
+    z-index: 12;
+    height: 40px;
+    width: 40px;
+    padding: 7px;
+    background-color: #002244;
+}
+
+.banner .hamburger > div {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 400ms ease;
+}
+
+.banner .hamburger > div::before,
+.banner .hamburger > div::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: inherit;
+    transition: transform 250ms ease-out;
+}
+
+.banner .hamburger > div::after {
+    top: 10px;
+}
+
+.banner #toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+}
+
+.banner #toggler:checked + .hamburger > div::before,
+.banner #toggler:checked + .hamburger > div::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.banner #toggler:checked ~ .main-nav {
+     height: 155px;
 }
 
 .banner .main-nav {
@@ -71,20 +143,7 @@ body {
     background-color: #002244;
 }
 
-.banner #toggler:checked + .main-nav {
-    height: 155px;
-}
-
-a {
-    color: #fff;
-    text-transform: capitalize;
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 0.2em;
-    font-weight: 700;
-}
-
-.main-nav a::after {
+.banner .main-nav a::after {
     content: " ";
     background-color: #fff;
     border-radius: 4px;
@@ -98,22 +157,9 @@ a {
     transform-origin: right;
 }
 
-.main-nav a:hover::after {
+.banner .main-nav a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-}
-
-ul {
-    list-style: none;
-}
-
-ul li {
-    border-bottom: 1px solid rgba(0,0,0,.25);
-    padding: 0.5em 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    opacity: .8;  
 }
 
 .banner .explorer {
@@ -129,10 +175,15 @@ ul li {
     font-weight: bold;
 }
 
+/* MAIN CONTENT STYLE */
+
 main {
     background-color: aliceblue;
     padding: 5em;
 }
+
+
+/* FOOTER STYLE */
 
 footer {
     position: fixed;
@@ -175,10 +226,10 @@ footer .social-media:hover::after {
 }
 
 footer ul {
-    width: 70%;
+    width: 500px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between
+    justify-content: space-evenly;
 }
 
 footer ul li {
@@ -212,15 +263,4 @@ footer ul li:last-child {
 footer a {
     padding: 0;
     transition: 250ms;
-}
-
-
-
-
-
-
-/*Typography Section*/
-
-
-@media only screen and (min-width: 600px) {
 }
