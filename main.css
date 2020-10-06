@@ -111,7 +111,7 @@ li {
     height: 100%;
     background-color: inherit;
     border-radius: inherit;
-    transition: transform 250ms ease-out;
+    transition: transform 600ms ease;
 }
 
 .banner .hamburger > div::after {
@@ -120,6 +120,10 @@ li {
 
 .banner #toggler:checked + .hamburger > div {
     transform: rotate(135deg);
+}
+
+.banner #toggler:checked:hover + .hamburger > div {
+    transform: rotate(225deg);
 }
 
 .banner #toggler:checked + .hamburger > div::before,
@@ -162,7 +166,7 @@ li {
     transform-origin: left;
 }
 
-.banner .explorer {
+.banner > .explorer {
     background-color: aliceblue;
     padding: 0.5em 1.5em;
     color: #000;
@@ -173,7 +177,9 @@ li {
     transform: translate(-50%, -50%);
     cursor: pointer;
     font-weight: bold;
+    z-index: 20;
 }
+
 
 /* MAIN CONTENT STYLE */
 
