@@ -85,6 +85,7 @@ img {
     color: transparent;
     background-image: var(--bg-gradient);
     background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .banner-logo h1 > a {
@@ -192,12 +193,10 @@ img {
     left: 0;  
     transform: scaleX(0);
     transition:  transform 250ms ease-in;
-    //transform-origin: right;
 }
 
 .banner-logo .main-nav a:hover::after {
     transform: scaleX(1);
-    //transform-origin: left;
 }
 
 .banner .banner-text {
