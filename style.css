@@ -1,3 +1,8 @@
+:root {
+    --bg-gradient: linear-gradient(45deg, #d65db1, #ff9671, #f9f871);
+    --bg-color: rgb(10, 25, 47);
+}
+
 *,
 *::before,
 *::after {
@@ -10,7 +15,8 @@
 
 body {
     font-family: "raleway", sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
 }
 
 a {
@@ -20,6 +26,7 @@ a {
     position: relative;
     padding-bottom: 0.2em;
     font-weight: 700;
+    font-size: 1rem;
 }
 
 ul {
@@ -33,6 +40,11 @@ li {
     justify-content: center;
     align-items: center; 
     opacity: .8;  
+    margin-bottom: 2em;
+}
+
+img {
+    max-width: 100%;
 }
 
 
@@ -41,7 +53,7 @@ li {
 
 .banner {
     background-color: rgba(0,0,0,.45);
-    background-image: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.5)),  url("images/clint-patterson-dYEuFB8KQJK-unsplash.jpg");
+    background-image: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.5)), url("images/clint-patterson-dYEuFB8KQJK-unsplash.jpg");
     background-size: cover;
     height: 100vh;
     background-repeat: no-repeat;
@@ -51,9 +63,9 @@ li {
 
 .banner-logo {
     width: 100%;
-    background-color: #002244;
+    background-color: var(--bg-color);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     height: 10vh;  
     position: fixed;
@@ -63,93 +75,115 @@ li {
     z-index: 1000;
 }
 
-.banner-logo > h1 > a {
-    font-weight: 900;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 20px;
-    letter-spacing: 1px;
+.banner-logo a {
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 0.2em;
+    font-weight: 700;
+    font-size: 1rem;
+    color: transparent;
+    background-image: var(--bg-gradient);
+    background-clip: text;
 }
 
-.banner #toggler {
+.banner-logo h1 > a {
+    font-weight: bold;
+    font-family: "dancing script", cursive;
+    font-size: 2rem;
+    font-style: italic;
+    padding-left: 0.7em;
+    letter-spacing: 2px;
+}
+
+.banner-logo #toggler {
     width: 40px;
     height: 40px;
     position: absolute;
-    right: 5px;
-    z-index: 20;
+    right: 6px;
+    z-index: 2;
     opacity: 0;
     cursor: pointer;
 }
 
-.banner .hamburger {
+.banner-logo .hamburger {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 5px;
-    z-index: 12;
+    right: 6px;
+    z-index: 1;
     height: 40px;
     width: 40px;
     padding: 7px;
-    background-color: #002244;
+    /*background-color: #002244;
+    /*border: 1px solid;*/
 }
 
-.banner .hamburger > div {
+.banner-logo .hamburger > div {
     position: relative;
     width: 100%;
     height: 3px;
-    background-color: #fff;
+    background-image: var(--bg-gradient);
     border-radius: 3px;
     transition: all 400ms ease;
 }
 
-.banner .hamburger > div::before,
-.banner .hamburger > div::after {
+.banner-logo .hamburger > div::before,
+.banner-logo .hamburger > div::after {
     content: "";
     position: absolute;
-    top: -10px;
-    width: 100%;
+    top: -6.5px;
+    width: 50%;
     height: 100%;
-    background-color: inherit;
+    background-image: inherit;
     border-radius: inherit;
-    transition: transform 600ms ease;
+    transition: transform 800ms ease;
 }
 
-.banner .hamburger > div::after {
-    top: 10px;
+.banner-logo .hamburger > div::after {
+    top: 6.5px;
+    right: 0;
 }
 
-.banner #toggler:checked + .hamburger > div {
+.banner-logo #toggler:checked + .hamburger > div {
     transform: rotate(135deg);
 }
 
-.banner #toggler:checked:hover + .hamburger > div {
+.banner-logo #toggler:checked:hover + .hamburger > div {
     transform: rotate(225deg);
 }
 
-.banner #toggler:checked + .hamburger > div::before,
-.banner #toggler:checked + .hamburger > div::after {
-    top: 0;
+.banner-logo #toggler:checked + .hamburger > div::before,
+.banner-logo #toggler:checked + .hamburger > div::after {
+    left: 25%;
     transform: rotate(90deg);
+    transition: transform 600ms ease;
 }
 
-.banner #toggler:checked ~ .main-nav {
-     height: 155px;
+.banner-logo #toggler:checked ~ .main-nav {
+     width: 100vw;
 }
 
-.banner .main-nav {
-    height: 0;
-    overflow-y: hidden;
-    transition: height 250ms ease-out;
+.banner-logo .main-nav {
+    height: 100vh;
+    overflow-x: hidden;
+    transition: width 250ms ease-out;
     position: absolute;
-    top: 100%;
-    width: 100%;
-    text-align: center;
-    background-color: #002244;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background-color: rgba(0, 0, 0, .95);
+    display: flex;
+    justify-content: center;
+    padding-top: 8em;
 }
 
-.banner .main-nav a::after {
-    content: " ";
-    background-color: #fff;
+.banner-logo .main-nav a::after {
+    content: "";
+    background-color: #f9f871;
     border-radius: 4px;
     height: 2px;
     width: 100%;
@@ -158,41 +192,72 @@ li {
     left: 0;  
     transform: scaleX(0);
     transition:  transform 250ms ease-in;
-    transform-origin: right;
+    //transform-origin: right;
 }
 
-.banner .main-nav a:hover::after {
+.banner-logo .main-nav a:hover::after {
     transform: scaleX(1);
-    transform-origin: left;
+    //transform-origin: left;
 }
 
-.banner > .explorer {
-    background-color: aliceblue;
-    padding: 0.5em 1.5em;
-    color: #000;
-    display: inline-block;
+.banner .banner-text {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
+    transform: translateY(-50%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    line-height: 1.8;
+}
+
+.banner .greeting {
+    font-size: 2rem;
     font-weight: bold;
-    z-index: 20;
+}
+
+.banner .name {
+    font-weight: 900;
+}
+
+.banner .job-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    background-image: var(--bg-gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.banner .explorer {
+    background-color: var(--bg-color);
+    padding: 0.3em 1.5em;
+    color: #57DFC2;
+    cursor: pointer;
+    font-family: "dancing script", cursive;
+    text-align: center;
+}
+
+.banner .explorer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;   
 }
 
 
 /* MAIN CONTENT STYLE */
 
 main {
+    margin-top: 30%;
     background-color: aliceblue;
-    padding: 5em;
 }
 
 
 /* FOOTER STYLE */
 
 footer {
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     left: 0;
     right: 0;
@@ -213,6 +278,7 @@ footer .social-media::after {
     height: 100%;
     font-weight: 900;
     font-size: 1.3rem;
+    font-family: "dancing script", cursive;
     background-color: #002244;
     position: absolute;
     top: 0;
@@ -246,8 +312,8 @@ footer ul li {
 }
 
 footer ul li:hover {
-    //box-shadow: 0 0 3px 2px rgba(0,255,255,.48);
-    transform: scale(1.1);
+    /* box-shadow: 0 0 3px 2px rgba(0,255,255,.48); */
+    transform: scale(1.1); 
 }
 
 footer ul li:first-child {
