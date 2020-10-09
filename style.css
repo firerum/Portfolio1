@@ -225,6 +225,7 @@ img {
     font-weight: 900;
     background-image: var(--bg-gradient);
     background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
 }
 
