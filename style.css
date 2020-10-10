@@ -1,6 +1,7 @@
 :root {
     --bg-gradient: linear-gradient(45deg, #d65db1, #ff9671, #f9f871);
     --bg-color: rgb(10, 25, 47);
+    --other-blue: #002244;
 }
 
 *,
@@ -14,7 +15,7 @@
 /* GENERAL STYLE */
 
 body {
-    font-family: "raleway", sans-serif;
+    font-family: "raleway", "segoe ui", Arial, sans-serif;
     font-size: 0.8rem;
     line-height: 1.4;
 }
@@ -33,16 +34,6 @@ ul {
     list-style: none;
 }
 
-li {
-    border-bottom: 1px solid rgba(0,0,0,.25);
-    padding: 0.5em 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    opacity: .8;  
-    margin-bottom: 2em;
-}
-
 img {
     max-width: 100%;
 }
@@ -53,8 +44,9 @@ img {
 
 .banner {
     background-color: rgba(0,0,0,.45);
-    background-image: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.5)), url("../images/clint-patterson-dYEuFB8KQJK-unsplash.jpg");
+    background-image: url("images/clint-patterson-dYEuFB8KQJk-unsplash.jpg");
     background-size: cover;
+    background-position: center;
     height: 100vh;
     background-repeat: no-repeat;
     background-position: center; 
@@ -117,7 +109,6 @@ img {
     height: 40px;
     width: 40px;
     padding: 7px;
-    /*background-color: #002244;
     /*border: 1px solid;*/
 }
 
@@ -179,7 +170,17 @@ img {
     background-color: rgba(0, 0, 0, .95);
     display: flex;
     justify-content: center;
-    padding-top: 8em;
+    align-items: center;
+}
+
+.banner-logo li {
+    border-bottom: 1px solid rgba(0,0,0,.25);
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    opacity: .8;  
+    margin-bottom: 2em;
 }
 
 .banner-logo .main-nav a::after {
@@ -208,21 +209,23 @@ img {
     flex-direction: column;
     font-size: 1.2rem;
     padding-left: 1rem;
-    line-height: 1.8;
 }
 
 .banner .greeting {
-    font-size: 2rem;
-    font-weight: bold;
+    font-family: "dancing script", cursive;
+    font-style: italic;
+    font-weight: 900;
 }
 
 .banner .name {
+    font-size: 1.4rem;
     font-weight: 900;
 }
 
 .banner .job-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 900;
+    font-family: "dancing script", cursive;
     background-image: var(--bg-gradient);
     background-clip: text;
     -webkit-background-clip: text;
@@ -231,11 +234,12 @@ img {
 
 .banner .explorer {
     background-color: var(--bg-color);
+    border-radius: 4px;
     padding: 0.3em 1.5em;
-    color: #57DFC2;
     cursor: pointer;
     font-family: "dancing script", cursive;
     text-align: center;
+    margin: 1em 0 3em 0;
 }
 
 .banner .explorer::after {
@@ -245,12 +249,32 @@ img {
     right: 0;   
 }
 
+.banner .contact-list {
+    line-height: 1.6;
+}
+
+.banner .contact-list i {
+    color:#57DFC2;
+    font-weight: bold;
+}
+
+.banner .contact-list span {
+    font-size: 0.7rem;
+    text-transform: lowercase; 
+    margin-left: 6px;
+}
+
+.banner .contact-list a:hover,
+.banner .contact-list a:focus {
+    opacity: .75;
+}
+
 
 /* MAIN CONTENT STYLE */
 
-main {
-    margin-top: 30%;
+main.index {
     background-color: aliceblue;
+    padding-top: 2em;
 }
 
 
@@ -304,31 +328,39 @@ footer ul {
     justify-content: space-evenly;
 }
 
-footer ul li {
+
+footer li {
+    border-bottom: 1px solid rgba(0,0,0,.25);
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    opacity: .8;  
+    margin-bottom: 2em;
     width: 2em;
     height: 2em;
     border-radius: 100%;
     transition: 250ms ease-in;
 }
 
-footer ul li:hover {
+footer li:hover {
     /* box-shadow: 0 0 3px 2px rgba(0,255,255,.48); */
     transform: scale(1.1); 
 }
 
-footer ul li:first-child {
+footer li:first-child {
      background-color: #3b5998;
 }
 
-footer ul li:nth-child(2) {
+footer li:nth-child(2) {
     background-color: #00acee;
 }
 
-footer ul li:nth-child(3) {
+footer li:nth-child(3) {
     background-image: linear-gradient(to right, #F58529, #FEDA77, #DD2A7B, #8134AF, #515BD4);
 }
 
-footer ul li:last-child {
+footer li:last-child {
     background-color: #0e76a8;  
 }
 
@@ -339,6 +371,9 @@ footer a {
 
 /* ABOUT ME SECTION */
 
+main.about {
+    margin-top: 30%;
+}
 .about article {
     
 }
