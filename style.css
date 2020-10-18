@@ -2,6 +2,8 @@
     --bg-gradient: linear-gradient(45deg, #d65db1, #ff9671, #f9f871);
     --bg-color: rgb(10, 25, 47);
     --other-blue: #002244;
+    --banner-icon-color: #57DFC2;
+    --pry-radius: 3px;
 }
 
 *,
@@ -18,6 +20,11 @@ body {
     font-family: "raleway", "segoe ui", Arial, sans-serif;
     font-size: 0.8rem;
     line-height: 1.4;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    color: var(--bg-color);
 }
 
 a {
@@ -25,7 +32,7 @@ a {
     text-transform: capitalize;
     text-decoration: none;
     position: relative;
-    padding-bottom: 0.2em;
+    padding-bottom: 0.2em; 
     font-weight: 700;
     font-size: 1rem;
 }
@@ -38,20 +45,52 @@ img {
     max-width: 100%;
 }
 
+input,
+textarea {
+   width: 100%;
+   padding: 0.5rem;
+   font-family: inherit;
+   border-radius: var(--pry-radius);
+   border: 1px groove #ddd;
+   resize: none;
+}
+
+button {
+    color: #fff;
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: var(--pry-radius);
+    font-family: inherit;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    padding: 0.5rem;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-image: var(--bg-gradient);
+    z-index: -1;
+    transition: width 250ms ease;
+}
+
+button:hover::after {
+    width: 100%;
+}
+
+.container {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
 
 
 /* HEADER */
-
-.banner {
-    background-color: rgba(0,0,0,.45);
-    background-image: url("images/clint-patterson-dYEuFB8KQJk-unsplash.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center; 
-    position: relative;
-}
 
 .banner-logo {
     width: 100%;
@@ -117,6 +156,8 @@ img {
     width: 100%;
     height: 3px;
     background-image: var(--bg-gradient);
+    background-size: 150%;
+    background-position: left;
     border-radius: 3px;
     transition: all 400ms ease;
 }
@@ -180,7 +221,11 @@ img {
     justify-content: center;
     align-items: center; 
     opacity: .8;  
-    margin-bottom: 2em;
+    margin-bottom: 3em;
+}
+
+.banner-logo li:last-child {
+    margin-bottom: 0;
 }
 
 .banner-logo .main-nav a::after {
@@ -193,132 +238,30 @@ img {
     bottom: 0;
     left: 0;  
     transform: scaleX(0);
-    transition:  transform 250ms ease-in;
+    transition: transform 250ms ease-in;
 }
 
-.banner-logo .main-nav a:hover::after {
+.banner-logo .main-nav a:hover::after,
+.banner-logo .main-nav a:focus::after {
     transform: scaleX(1);
 }
 
-.banner .banner-text {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    font-size: 1.2rem;
-    padding-left: 1rem;
-}
-
-.banner .greeting {
-    font-family: "dancing script", cursive;
-    font-style: italic;
-    font-weight: 900;
-}
-
-.banner .name {
-    font-size: 1.4rem;
-    font-weight: 900;
-}
-
-.banner .job-title {
-    font-size: 2rem;
-    font-weight: 900;
-    font-family: "dancing script", cursive;
-    background-image: var(--bg-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.banner .explorer {
-    background-color: var(--bg-color);
-    border-radius: 4px;
-    padding: 0.3em 1.5em;
-    cursor: pointer;
-    font-family: "dancing script", cursive;
-    text-align: center;
-    margin: 1em 0 3em 0;
-}
-
-.banner .explorer::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;   
-}
-
-.banner .contact-list {
-    line-height: 1.6;
-}
-
-.banner .contact-list i {
-    color:#57DFC2;
-    font-weight: bold;
-}
-
-.banner .contact-list span {
-    font-size: 0.7rem;
-    text-transform: lowercase; 
-    margin-left: 6px;
-}
-
-.banner .contact-list a:hover,
-.banner .contact-list a:focus {
-    opacity: .75;
-}
-
-
-/* MAIN CONTENT STYLE */
-
-main.index {
-    background-color: aliceblue;
-    padding-top: 2em;
-}
 
 
 /* FOOTER STYLE */
 
 footer {
-    /* position: fixed; */
-    bottom: 0;
-    left: 0;
-    right: 0;
+    /* margin-top: 30%; */
+    margin: 0 -20px;
+    color: #fff;
+    background-color: var(--bg-color);
+    text-align: center;
 }
 
 footer .social-media {
-    color: #fff;
-    background-color: #002244;
     padding: 0.8em;
     display: flex;
     align-items: center;
-    position: relative;
-}
-
-footer .social-media::after {
-    content: "Share";
-    width: 100%;
-    height: 100%;
-    font-weight: 900;
-    font-size: 1.3rem;
-    font-family: "dancing script", cursive;
-    background-color: #002244;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    transition: 250ms ease-in;
-    transform-origin: top;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
-
-footer .social-media:hover::after {
-    cursor: pointer;
-    transform: scaleY(0);
 }
 
 footer ul {
@@ -328,52 +271,18 @@ footer ul {
     justify-content: space-evenly;
 }
 
-
-footer li {
-    border-bottom: 1px solid rgba(0,0,0,.25);
-    padding: 0.5em 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    opacity: .8;  
-    margin-bottom: 2em;
-    width: 2em;
-    height: 2em;
-    border-radius: 100%;
-    transition: 250ms ease-in;
+footer i {
+    color: #ddd;
+    transition: all 250ms ease;
 }
 
-footer li:hover {
-    /* box-shadow: 0 0 3px 2px rgba(0,255,255,.48); */
-    transform: scale(1.1); 
+footer i:hover,
+footer i:focus {
+    color: #fff; 
 }
 
-footer li:first-child {
-     background-color: #3b5998;
+footer > p {
+    font-weight: bold;
 }
 
-footer li:nth-child(2) {
-    background-color: #00acee;
-}
 
-footer li:nth-child(3) {
-    background-image: linear-gradient(to right, #F58529, #FEDA77, #DD2A7B, #8134AF, #515BD4);
-}
-
-footer li:last-child {
-    background-color: #0e76a8;  
-}
-
-footer a {
-    padding: 0;
-    transition: 250ms;
-}
-
-/* ABOUT ME SECTION */
-
-main.about {
-    margin-top: 30%;
-}
-.about article {
-    
-}

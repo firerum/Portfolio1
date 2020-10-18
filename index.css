@@ -1,0 +1,93 @@
+/* HEADER STYLE */
+
+.banner {
+    background-color: rgba(0,0,0,.45);
+    background-image: url("images/clint-patterson-dYEuFB8KQJk-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center; 
+    position: relative;
+    height: 100vh;
+    margin: 0 -20px;
+}
+
+.banner .banner-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+}
+
+.banner .greeting {
+    font-family: "dancing script", cursive;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.banner .name {
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.banner .job-title {
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: "dancing script", cursive;
+    background-image: var(--bg-gradient);
+    background-size: 150%;
+    background-position: left;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.banner .explorer {
+    background-color: var(--bg-color);
+    border-radius: 4px;
+    padding: 0.3em 1.5em;
+    cursor: pointer;
+    font-family: "dancing script", cursive;
+    text-align: center;
+    margin: 1em 0 3em 0;
+}
+
+.banner .explorer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;   
+}
+
+.banner .contact-list {
+    line-height: 1.6;
+}
+
+.banner .contact-list i {
+    color: var(--banner-icon-color);
+    font-weight: bold;
+}
+
+.banner .contact-list span {
+    font-size: 0.7rem;
+    text-transform: lowercase; 
+    margin-left: 6px;
+}
+
+.banner .contact-list a:hover,
+.banner .contact-list a:focus {
+    opacity: .75;
+}
+
+
+
+/* MAIN CONTENT STYLE */
+
+main {
+    background-color: aliceblue;
+    padding-top: 2em;
+}
