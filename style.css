@@ -18,13 +18,19 @@
 
 body {
     font-family: "raleway", "segoe ui", Arial, sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     line-height: 1.4;
     scroll-behavior: smooth;
+    background-color: aliceblue;
 }
 
 h1, h2, h3 {
     color: var(--bg-color);
+}
+
+p {
+    margin-top: 1rem;
+    color: #696969;
 }
 
 a {
@@ -283,6 +289,7 @@ footer i:focus {
 
 footer > p {
     font-weight: bold;
+    color: #fff;
 }
 
 
