@@ -1,16 +1,27 @@
 /* HEADER STYLE */
 
 .banner {
-    background-color: rgba(0,0,0,.45);
+    background-color: rgb(0, 0, 0);
     background-image: url("images/clint-patterson-dYEuFB8KQJk-unsplash.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-position: center; 
-    position: relative;
+    position: relative; 
     height: 100vh;
     margin: 0 -20px;
 }
+
+/* .banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(6px);
+    background-color: rgba(10, 25, 47, .8);
+} */
 
 .banner .banner-text {
     position: absolute;
@@ -21,6 +32,10 @@
     flex-direction: column;
     font-size: 1.2rem;
     padding-left: 1rem;
+}
+
+.banner p {
+    color: #fff;
 }
 
 .banner .greeting {
@@ -68,7 +83,7 @@
 }
 
 .banner .contact-list i {
-    color: var(--banner-icon-color);
+    color: skyblue;
     font-weight: bold;
 }
 
@@ -84,10 +99,47 @@
 }
 
 
-
 /* MAIN CONTENT STYLE */
 
 main {
-    background-color: aliceblue;
     padding-top: 2em;
+}
+
+article {
+    text-align: center;
+}
+
+article h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+section {
+    background-color: #fff;
+    padding: 2em 1em;
+    margin-bottom: 1em;
+    border-radius: var(--pry-radius);
+    box-shadow: 0 2px 8px 2px rgba(0,0,0,.1);
+    transition: all 600ms ease-out;
+}
+
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px 2px rgba(0,0,0,.25);
+}
+
+section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+}
+
+section i {
+    color: transparent;
+    background-image: var(--bg-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 2rem;
+    /* color: var(--bg-color) */
 }
