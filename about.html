@@ -7,38 +7,43 @@
       <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;0,700;0,900;1,400&display=swap"
          rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="fonts/css/all.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="about.css">
    </head>
 
    <body>
       <div class="container">
-         <div class="banner-logo">
-            <h1><a href="index.html">CodeSader<br></a></h1>
-            <input type="checkbox" id="toggler" name="toggler">
-            <div class="hamburger">
-               <div></div>
+         <header>
+            <div class="banner-logo">
+               <h1><a href="index.html">CodeSader<br></a></h1>
+               <input type="checkbox" id="toggler" name="toggler">
+               <div class="hamburger">
+                  <div></div>
+               </div>
+               <nav class="main-nav">
+                  <ul class="header-ul">
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="about.html">About Me</a></li>
+                     <li><a href="service.html">Services</a></li>
+                     <li><a href="projects.html">Projects</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                     <li><a href="#">Tribute</a></li>
+                  </ul>
+               </nav>
             </div>
-            <nav class="main-nav">
-               <ul class="header-ul">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About Me</a></li>
-                  <li><a href="service.html">Services</a></li>
-                  <li><a href="#">Skills</a></li>
-                  <li><a href="projects.html">Projects</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-               </ul>
-            </nav>
-         </div>
+         </header>
 
          <main class="about">
+            <h1>About Me</h1>
             <article>
-               <h1>About Me</h1>
                <figure>
                   <div class=""><img src="images/profile.jpg" alt="Adewuyi Oladapo Front-End Developer"></div>
                   <figcaption>
                      <p>Ademuyiwa Adewuyi</p>
                      <p>Software Developer <br> UI/UX Designer</p>
+                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nemo quidem ullam dignissimos nobis necessitatibus, officia distinctio commodi possimus tempora unde debitis hic blanditiis soluta qui optio quisquam error dolorem aut cum alias minus delectus! Nesciunt architecto rem blanditiis esse!</p>
                   </figcaption>
                </figure>
                <p>I am particularly passionate about Software Development</p>
@@ -49,27 +54,54 @@
                <ul>
                   <li>
                      <i class="fa fa-html5" aria-hidden="true"></i>
-                     <span>HTML5</span></li>
+                     <span>HTML5</span>
+                  </li>
                   <li>
-                     <i class="fa fa-css3" aria-hidden="true"></i>
+                     <i class="fab fa-css3-alt"></i>
                      <span>CSS3</span>
                   </li>
                   <li>
                      <i class="fab fa-js"></i>
                      <span>JavaScript</span></li>
                   <li>Tailwind CSS</li>
-                  <li>Sass</li>
-                  <li>Java</li>
-                  <li>React js</li>
-                  <li>Node js</li>
                   <li>
-                     <i class="fa fa-github" aria-hidden="true"></i>
+                     <i class="fab fa-sass"></i>
+                     <span>Sass</span>
+                  </li>
+                  <li>
+                     <i class="fab fa-java"></i>
+                     <span>Java</span>
+                  </li>
+                  <li>
+                     <i class="fab fa-react"></i>
+                     <span>React js</span>
+                  </li>
+                  <li>
+                     <i class="fab fa-node"></i>
+                     <span>Node js</span>  
+                  </li>
+                  <li>
+                     <i class="fab fa-github-square"></i>
                      <span>Git & Github</span></li>
-                  <li>CLI</li>
+                  <li>
+                     <i class="fas fa-terminal"></i>
+                     <span>CLI</span>  
+                  </li>
                </ul>
             </section>
          </main>
+
+         <footer>
+            <nav class="social-media">
+               <ul>
+                  <li><a href="https://mobile.facebook.com/ademuyiwa.ife"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+               </ul>
+            </nav>
+            <p>&copy; 2020 Codesader. All rights reserved.</p>
+         </footer>
       </div>
    </body>
-
 </html>
