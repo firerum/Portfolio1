@@ -1,0 +1,74 @@
+label {
+    color: var(--bg-color);
+} 
+
+input {
+   appearance: none;
+}
+
+
+/* MAIN SECTION */
+
+main {
+   margin-top: 15vh;
+   text-align: center;
+}
+
+main > .contact-banner {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 4em;
+   align-items: center;
+   justify-content: center;
+}
+
+.contact-banner i {
+   font-size: 3rem;
+   background-image: var(--bg-gradient);
+   color: transparent;
+   background-clip: text;
+   -webkit-background-clip: text;
+   order: 1;
+   margin-right: 10px;
+}
+
+.contact-banner > h1 {
+   position: relative;
+   margin-bottom: rem;
+   padding-bottom: 0.2em;
+   order: 2;
+}
+
+/* .contact-banner > h1::after {
+   content: "";
+   position: absolute;
+   left: 50%;
+   bottom: 0;
+   width: 30%;
+   transform: translateX(-50%);
+   border-radius: 5px;
+   height: 3px;
+   background-color: var(--other-blue);
+   transition: background-color 250ms ease;
+}
+ */
+.contact-banner > h1:hover::after {
+   background-color: var(--banner-icon-color);
+}
+
+.form-row {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   margin-bottom: 1em;
+}
+
+.form-row > label {
+   font-size: 0.9rem;
+   margin-bottom: 4px;
+   font-weight: 00;
+}
+
+button {
+   width: 100%;
+}
