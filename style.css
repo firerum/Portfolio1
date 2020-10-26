@@ -91,6 +91,7 @@ button:hover::after {
 
 .container {
     width: calc(100% - 40px);
+    max-width: 1020px;
     margin: 0 auto;
 }
 

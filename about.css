@@ -2,3 +2,6 @@ main {
     margin-top: 15vh;
 }
 
+img {
+    clip-path: circle(40%);
+}
