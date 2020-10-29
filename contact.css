@@ -39,19 +39,6 @@ main > .contact-banner {
    order: 2;
 }
 
-/* .contact-banner > h1::after {
-   content: "";
-   position: absolute;
-   left: 50%;
-   bottom: 0;
-   width: 30%;
-   transform: translateX(-50%);
-   border-radius: 5px;
-   height: 3px;
-   background-color: var(--other-blue);
-   transition: background-color 250ms ease;
-}
- */
 .contact-banner > h1:hover::after {
    background-color: var(--banner-icon-color);
 }
@@ -66,7 +53,7 @@ main > .contact-banner {
 .form-row > label {
    font-size: 0.9rem;
    margin-bottom: 4px;
-   font-weight: 00;
+   font-weight: 500;
 }
 
 button {

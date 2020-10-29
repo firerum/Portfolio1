@@ -73,22 +73,6 @@ button {
     padding: 0.5rem;
 }
 
-button::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-image: var(--bg-gradient);
-    z-index: -1;
-    transition: width 250ms ease;
-}
-
-button:hover::after {
-    width: 100%;
-}
-
 .container {
     width: calc(100% - 40px);
     max-width: 1020px;
@@ -292,5 +276,3 @@ footer > p {
     font-weight: 300;
     color: #fff;
 }
-
-
