@@ -77,6 +77,7 @@ main .flex > a {
 
 main .flex > p {
    order: 3;
+   padding: 5px 0;
 }
 
 main .flex > .social-media {
