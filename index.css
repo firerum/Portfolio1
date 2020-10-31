@@ -100,30 +100,44 @@ article {
     text-align: center;
 }
 
-article h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+article > h1 {
+    display: inline-block;
+    font-size: 2.5rem;
+    padding: 0.2em;
+    margin-bottom: 4rem;
     position: relative;
-    color: var(--other-blue)
+    color: var(--other-blue);
 }
 
-article section:not(.testimonial) {
+article > h1::after {
+   content: "";
+   width: 70%;
+   height: 5px;
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   background-color: red;
+   border-radius: var(--pry-radius); 
+   transition: all 240ms ease-in;
+}
+
+article > h1:hover::after {
+   width: 100%;
+}
+
+article > section {
     background-color: #fff;
     padding: var(--pry-padding);
     margin-bottom: var(--bottom-margin);
     border-radius: var(--pry-radius);
-    box-shadow: 0 2px 8px 2px rgba(0,0,0,.1);
+    box-shadow: 0 2px 8px 2px var(--black-shadow);
     transition: all 600ms ease-out;
     display: flex;
     flex-direction: column;
 }
 
-/* article section:hover:not(.testimonial) {
-    transform: scale(1.02);
-    box-shadow: 0 2px 8px 2px rgba(0,0,0,.25);
-} */
-
-article section h3 {
+article > section > h3 {
     font-size: 1.5rem;
     font-weight: 500;
     margin: 1.5rem 0;
@@ -131,13 +145,13 @@ article section h3 {
     order: 2;
 }
 
-article section i {
+article > section > i {
     font-size: 2.5rem;
     color: var(--other-blue);
     order: 1;
 }
 
-article p a {
+article > p > a {
     background-color: var(--other-blue);
     color: #fff;
     padding: 0.7em 1.5em;
@@ -146,7 +160,7 @@ article p a {
     box-shadow: 0 2px 8px 2px rgba(0,0,0,.25); ;
 }
 
-article p {
+article > section > p {
     /* margin: 2em 0; */
     order: 3;
 }
