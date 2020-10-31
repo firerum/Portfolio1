@@ -21,26 +21,72 @@ main > .contact-banner {
    align-items: center;
    justify-content: center;
 }
-
-.contact-banner i {
-   font-size: 3rem;
-   background-image: var(--bg-gradient);
-   color: transparent;
-   background-clip: text;
-   -webkit-background-clip: text;
-   order: 1;
-   margin-right: 10px;
-}
+  
 
 .contact-banner > h1 {
+   display: inline-block;
    position: relative;
    margin-bottom: rem;
    padding-bottom: 0.2em;
    order: 2;
 }
 
+.contact-banner > h1::after {
+   content: "";
+   width: 50%;
+   height: 5px;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   transform: translateX(50%);
+   background-color: red;
+   border-radius: var(--pry-radius); 
+   transition: all 240ms ease-in;
+}
+
 .contact-banner > h1:hover::after {
-   background-color: var(--banner-icon-color);
+   width: 100%;
+   transform: translateX(0);
+}
+
+main .flex {
+   background-color: #fff;
+   color: #fff;
+   padding: var(--pry-padding);
+   margin-bottom: var(--bottom-margin);
+   display: flex;
+   flex-direction: column;
+}
+
+main .flex > h3 {
+   color: var(--sec-color);
+   order: 2;
+   margin: 1rem 0;
+}
+
+main .flex > i {
+   order: 1;
+   font-size: 2.5rem;
+   color: var(--other-blue);
+}
+
+main .flex > a {
+   order: 3;
+   color: var(--other-blue);
+   text-transform: lowercase;
+   font-size: 0.8rem;
+   font-weight: 500;
+   padding-bottom: 1em;
+}
+
+main .flex > p {
+   order: 3;
+}
+
+form {
+   margin-top: 4rem;
+   position: relative;
+   padding: 2rem 0;
 }
 
 .form-row {
@@ -59,3 +105,4 @@ main > .contact-banner {
 button {
    width: 100%;
 }
+

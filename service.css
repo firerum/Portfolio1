@@ -14,9 +14,23 @@ section {
    padding: 2em 1em;
    margin-bottom: 1em;
    border-radius: var(--pry-radius);
+   display: flex;
+   flex-direction: column;
 }
 
 section h3 {
-   margin-bottom: 0.5em;
+   margin: 1.5rem 0;
+   color: var(--sec-color);
+   order: 2;
+}
+
+section i {
+   font-size: 2.5rem;
+   color: var(--other-blue);
+   order: 1;
+}
+
+section p {
+   order: 3;
 }
 

@@ -9,7 +9,7 @@
     background-position: center; 
     position: relative; 
     height: 100vh;
-    margin: -20px -20px;
+    margin: 0 -20px;
 }
 
 .banner .banner-text {
@@ -23,6 +23,10 @@
     padding-left: 1rem;
 }
 
+.banner .wrapper-text {
+    margin-bottom: 3em;
+}
+
 .banner p {
     color: #fff;
 }
@@ -34,7 +38,7 @@
 }
 
 .banner .name {
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-weight: 900;
 }
 
@@ -100,34 +104,37 @@ article h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
     position: relative;
+    color: var(--other-blue)
 }
 
 article section:not(.testimonial) {
     background-color: #fff;
-    padding: 2em 1em;
-    margin-bottom: 1em;
+    padding: var(--pry-padding);
+    margin-bottom: var(--bottom-margin);
     border-radius: var(--pry-radius);
     box-shadow: 0 2px 8px 2px rgba(0,0,0,.1);
     transition: all 600ms ease-out;
+    display: flex;
+    flex-direction: column;
 }
 
-article section:hover:not(.testimonial) {
+/* article section:hover:not(.testimonial) {
     transform: scale(1.02);
     box-shadow: 0 2px 8px 2px rgba(0,0,0,.25);
-}
+} */
 
 article section h3 {
     font-size: 1.5rem;
-    margin-bottom: 0.5em;
     font-weight: 500;
+    margin: 1.5rem 0;
+    color: var(--sec-color);
+    order: 2;
 }
 
 article section i {
-    color: transparent;
-    background-image: var(--bg-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: var(--other-blue);
+    order: 1;
 }
 
 article p a {
@@ -140,5 +147,6 @@ article p a {
 }
 
 article p {
-    margin: 2em 0;
+    /* margin: 2em 0; */
+    order: 3;
 }
