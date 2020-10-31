@@ -28,6 +28,7 @@ section h3 {
 section i {
    font-size: 2.5rem;
    color: var(--other-blue);
+   filter: var(--icon-shadow);
    order: 1;
 }
 
