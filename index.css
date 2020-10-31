@@ -120,11 +120,6 @@ article > h1::after {
    transform: translateX(-50%);
    background-color: red;
    border-radius: var(--pry-radius); 
-   transition: all 240ms ease-in;
-}
-
-article > h1:hover::after {
-   width: 100%;
 }
 
 article > section {

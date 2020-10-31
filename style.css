@@ -145,7 +145,6 @@ button {
     height: 40px;
     width: 40px;
     padding: 7px;
-    /*border: 1px solid;*/
 }
 
 .banner-logo .hamburger > div {
@@ -192,25 +191,23 @@ button {
 }
 
 .banner-logo #toggler:checked ~ .main-nav {
-     /* width: 100vw; */
-     clip-path: circle(100%);
+    width: 100vw;
 }
 
 .banner-logo .main-nav {
     height: 100vh;
     overflow-x: hidden;
-    transition: all 450ms ease-out;
+    transition: width 250ms ease-out;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100vw;
+    width: 0;
     background-color: rgba(0, 0, 0, .95);
     display: flex;
     justify-content: center;
     align-items: center;
-    clip-path: circle(0% at 100% 0%);
 }
 
 .banner-logo li {
