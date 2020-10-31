@@ -16,6 +16,7 @@ section {
    border-radius: var(--pry-radius);
    display: flex;
    flex-direction: column;
+   box-shadow: var(--general-shadow);
 }
 
 section h3 {
