@@ -55,23 +55,8 @@ main .flex {
    display: flex;
    flex-direction: column;
    position: relative;
+   box-shadow: var(--general-shadow);
 }
-
-main .flex::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--black-shadow);
-    clip-path: circle(0% at 0% 0%);
-    transition: clip-path 600ms ease;
-}
-
-main .flex:hover::before {
-    clip-path: circle(100%);
-} 
 
 main .flex > h3 {
    color: var(--sec-color);
@@ -98,6 +83,21 @@ main .flex > p {
    order: 3;
 }
 
+main .flex > .social-media {
+   order: 3;
+   display: flex;
+   justify-content: center;
+}
+
+main .chat i {
+   color: var(--other-blue);
+   margin-right: 1.5rem;
+}
+
+main .chat .last {
+   margin-right: 0;
+}
+
 form {
    margin-top: 4rem;
    position: relative;
@@ -120,4 +120,5 @@ form {
 button {
    width: 100%;
 }
+
 
