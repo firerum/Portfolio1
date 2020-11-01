@@ -30,12 +30,32 @@ body {
     background-color: aliceblue;
 }
 
+.title{
+   display: inline-block;
+   position: relative;
+   margin-bottom: var(--bottom-margin);
+   padding-bottom: 0.2rem;
+   font-size: 2.5rem;
+}
+
+.title::after {
+   content: "";
+   width: 70%;
+   height: 5px;
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   background-color: red;
+   border-radius: var(--pry-radius); 
+}
+
 h1, h2, h3 {
     color: var(--bg-color);
 }
 
 p {
-    /* margin-top: 1rem; */
+    margin-bottom: var(--bottom-margin);
     color: #696969;
 }
 
@@ -57,6 +77,10 @@ img {
     max-width: 100%;
 }
 
+figure {
+    text-align: center;
+}
+
 input,
 textarea {
    width: 100%;
@@ -76,7 +100,7 @@ button {
     font-weight: bold;
     position: relative;
     z-index: 1;
-    padding: 0.5rem;
+    padding: 0.7rem;
 }
 
 .neumorphism {

@@ -17,31 +17,11 @@ main {
 main > .contact-banner {
    display: flex;
    flex-direction: column;
-   margin-bottom: 4em;
+   margin-bottom: 4rem;
    align-items: center;
    justify-content: center;
 }
   
-.contact-banner > h1 {
-   display: inline-block;
-   position: relative;
-   margin-bottom: var(--bottom-margin);
-   padding-bottom: 0.2em;
-   font-size: 2.5rem;
-}
-
-.contact-banner > h1::after {
-   content: "";
-   width: 70%;
-   height: 5px;
-   position: absolute;
-   bottom: 0;
-   left: 50%;
-   transform: translateX(-50%);
-   background-color: red;
-   border-radius: var(--pry-radius); 
-}
-
 main .flex {
    background-color: #fff;
    color: #fff;
@@ -96,9 +76,13 @@ main .chat .last {
 }
 
 form {
-   margin-top: 4rem;
    position: relative;
    padding: 2rem 0;
+}
+
+form > h2 {
+   margin: 2rem 0;
+   font-size: 1.5rem;
 }
 
 .form-row {
@@ -116,6 +100,7 @@ form {
 
 button {
    width: 100%;
+   border-radius: 25px;
 }
 
 
