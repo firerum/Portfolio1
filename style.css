@@ -83,7 +83,7 @@ button {
    border-radius: 25px;
    padding: 10px 0;
    background-color: linear-gradient(22deg, #e6e6e6, #fff);
-   box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, .2),
+   box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, .2),
                11px -11px 10px #fff;
    transition: box-shadow 250ms ease-out;
 }
