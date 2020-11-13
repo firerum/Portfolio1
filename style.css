@@ -1,6 +1,6 @@
 :root {
     --bg-gradient: linear-gradient(45deg, #d65db1, #ff9671, #f9f871);
-    --bg-color: rgb(10, 25, 47);
+    --bg-color: rgb(7, 19, 37);
     --sec-color: #a58040;
     --other-blue: #002244;
     --banner-icon-color: #57DFC2;
@@ -279,6 +279,53 @@ button {
     transform: scaleX(1);
 }
 
+header {
+    position: relative;
+}
+
+header .switch {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 55px;
+    height: 25px;
+    background-color: aliceblue;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+header .input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+header .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 2;
+    transition: all 250ms ease;
+}
+
+header .switch:active .circle {
+    width: 22px;
+}
+
+header .input:checked + .circle {
+    left: 30px;
+    background-color: var(--other-blue);
+}
 
 
 /* FOOTER STYLE */
@@ -319,6 +366,8 @@ footer > p {
     color: #fff;
 }
 
+/* Media Queries */
+
 @media only screen and (min-width: 700px) {
 
     body {
@@ -343,7 +392,7 @@ footer > p {
     }
 
     .banner-logo .main-nav {
-        width: 50%;
+        width: 55%;
         height: inherit;
         position: static;
         background-color: transparent;
@@ -367,7 +416,24 @@ footer > p {
         margin-right: 40px;
     }
 
-   /*  .banner-logo a {
-        padding: 0;
-    } */
+    header .media-list {
+        position: fixed;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+    }
+
+    header .media-list i {
+        background-color: var(--other-blue);
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        padding: 1rem;
+        font-size: 1.4rem;
+        border: var(--deborder);
+        display: flex;
+        align-items: center;
+    }
+
 }
