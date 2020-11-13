@@ -14,17 +14,15 @@
 
 .banner .banner-text {
     position: absolute;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
     color: #fff;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     font-size: 1.2rem;
     padding-left: 1rem;
-}
-
-.banner .wrapper-text {
-    margin-bottom: 3em;
+    width: 100%;
 }
 
 .banner p {
@@ -62,6 +60,8 @@
     font-family: "dancing script", cursive;
     text-align: center;
     margin: 1em 0 3em 0;
+    width: 250px;
+    /* align-self: flex-start; */
 }
 
 .banner .explorer:hover,
@@ -110,6 +110,21 @@ article > section {
     transition: all 600ms ease-out;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+article > section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--black-shadow);
+}
+
+article > section:hover::after {
+    width: 100%;
 }
 
 article > section:hover {
@@ -146,4 +161,47 @@ article > section > p {
 
 main .testimonial {
     text-align: center;
+}
+
+
+/* Media Queries */
+
+@media only screen and (min-width: 700px) {
+
+    .container {
+        max-width: none;
+    }
+
+    .banner .banner-text {
+        padding-left: 6rem;
+        font-size: 1.7rem;
+        line-height: 1;
+    }
+
+    .banner .name,
+    .banner .job-title {
+        font-size: 3.5rem;
+    }
+
+    .banner .explorer {
+        padding: 1em 2em;
+    }
+
+    .banner .banner-text {
+        top: 60%;
+    }
+
+    .banner .contact-list li {
+        
+    }
+
+    .banner .contact-list i {
+        font-size: 1.8rem;
+    }
+
+    .banner .contact-list span {
+        margin-left: 10px;
+        font-size: 1rem;
+    }
+
 }
