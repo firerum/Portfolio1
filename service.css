@@ -36,3 +36,22 @@ section p {
    order: 3;
 }
 
+/* Media Queries */
+
+@media only screen and (min-width: 700px) {
+   main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+   }
+
+   main h2 {
+      grid-column: 1/span 3;
+   }
+
+   section {
+      margin-bottom: 0;
+   }
+
+   
+}

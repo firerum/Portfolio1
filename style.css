@@ -42,7 +42,7 @@ body {
 
 .title::after {
    content: "";
-   width: 70%;
+   width: 100px;
    height: 5px;
    position: absolute;
    bottom: 0;
@@ -285,7 +285,7 @@ header {
 
 header .switch {
     position: absolute;
-    top: 10%;
+    top: 12%;
     right: 0;
     width: 55px;
     height: 25px;
@@ -325,6 +325,10 @@ header .switch:active .circle {
 header .input:checked + .circle {
     left: 30px;
     background-color: var(--other-blue);
+}
+
+header .media-list {
+    display: none;
 }
 
 
@@ -369,6 +373,8 @@ footer > p {
 /* Media Queries */
 
 @media only screen and (min-width: 700px) {
+
+    /* Header Section */
 
     body {
         font-size: 1rem;
@@ -417,6 +423,7 @@ footer > p {
     }
 
     header .media-list {
+        display: block;
         position: fixed;
         right: 0;
         top: 50%;
@@ -427,13 +434,18 @@ footer > p {
     header .media-list i {
         background-color: var(--other-blue);
         color: #fff;
-        width: 50px;
+        width: 35px;
         height: 50px;
-        padding: 1rem;
-        font-size: 1.4rem;
+        padding: 0.5rem;
+        font-size: 1rem;
         border: var(--deborder);
         display: flex;
         align-items: center;
+        justify-content: center;
     }
+
+     header .media-list i:hover {
+         background-color: var(--bg-color);
+     }
 
 }

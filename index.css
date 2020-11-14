@@ -199,4 +199,22 @@ main .testimonial {
         font-size: 1rem;
     }
 
+    /* Main Section */
+
+    article {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    article h1 {
+        grid-column: 1/span 3;
+    }
+
+    article p {
+        
+    }
+
+
+
 }

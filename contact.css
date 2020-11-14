@@ -102,4 +102,38 @@ button {
    width: 100%;
 }
 
+/* Media Queries */
+
+@media only screen and (min-width: 700px) {
+
+   main .contact-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+   }
+
+   main .flex {
+      margin-bottom: 0;
+   }
+
+   form h2 {
+      font-size: 2.5rem;
+      grid-column: 1/span 2;
+   }
+
+   .form-row {
+      margin-bottom: 1.5em;
+   }
+
+   button,
+   input,
+   textarea {
+      font-size: 1.2rem;
+   }
+
+   .form-row > label {
+      font-size: 1.5rem;
+   }
+}
+
 
