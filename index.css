@@ -1,12 +1,11 @@
 /* HEADER STYLE */
 
 .banner {
-    background-color: rgb(0, 0, 0);
-    background-image: url("images/clint-patterson-dYEuFB8KQJk-unsplash.jpg");
+    background-color: var(--bg-color);
+    background-image: url("images/5.jpg"); 
     background-size: cover;
-    background-position: center;
+    background-position: top left;
     background-repeat: no-repeat;
-    background-position: center; 
     position: relative; 
     height: 100vh;
     margin: 0 -20px;
@@ -97,7 +96,7 @@ main {
 
 article {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 4em;
 }
 
 article > section {
@@ -112,7 +111,7 @@ article > section {
     position: relative;
 }
 
-article > section::after {
+/* article > section::after {
     content: "";
     position: absolute;
     top: 0;
@@ -124,7 +123,7 @@ article > section::after {
 
 article > section:hover::after {
     width: 100%;
-}
+} */
 
 article > section:hover {
     box-shadow: 0 2px 8px 2px rgba(0,0,0,.25);
@@ -158,9 +157,76 @@ article > section > p {
     order: 3;
 }
 
-main .testimonial {
+main > .team {
     text-align: center;
 }
+
+main > .team img {
+    width: 300px;
+    border-radius: 50%;
+}
+
+main > .testimonial {
+    position: relative;
+    width: 250px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+main > .testimonial h2 {
+   /*  text-align: center; */
+}
+
+main > .testimonial .slider {
+    position: relative;
+    width: 250px;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: var(--bottom-margin);
+}
+
+main > .testimonial .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 600ms ease;
+}
+
+main > .testimonial .current {
+    opacity: 1;
+}
+
+main > .testimonial button {
+    position: absolute;
+    top: 35%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.25);
+}
+
+main > .testimonial button:hover {
+    background-color: rgba(0,0,0,.8);
+}
+
+main > .testimonial #next {
+    right: 10px;
+}
+
+main > .testimonial #prev {
+    left: 10px;
+}
+
+
+
 
 
 /* Media Queries */
@@ -212,7 +278,7 @@ main .testimonial {
     }
 
     article p {
-        
+       
     }
 
 
