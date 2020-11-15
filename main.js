@@ -2,6 +2,8 @@
 const slides = document.querySelectorAll(".slide");
 const nextBtn = document.querySelector("#next");
 const prevBtn = document.querySelector("#prev");
+const interval = 5000;
+let imageInterval;
 
 function nextImage() {
    // Get current image
@@ -33,3 +35,6 @@ function previousImage() {
 
 nextBtn.addEventListener("click", nextImage);
 prevBtn.addEventListener("click", previousImage);
+
+// Auto slide
+imageInterval = setInterval(nextImage, interval);
