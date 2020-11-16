@@ -33,8 +33,17 @@ function previousImage() {
    }
 }
 
-nextBtn.addEventListener("click", nextImage);
-prevBtn.addEventListener("click", previousImage);
+nextBtn.addEventListener("click", e => {
+   nextImage();
+   clearInterval(imageInterval);
+   imageInterval = setInterval(nextImage, interval);
+});
+
+prevBtn.addEventListener("click", e => {
+   previousImage();
+   clearInterval(imageInterval);
+   imageInterval = setInterval(nextImage, interval);
+});
 
 // Auto slide
 imageInterval = setInterval(nextImage, interval);
