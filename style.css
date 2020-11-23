@@ -294,7 +294,7 @@ header .switch {
     right: 0;
     width: 55px;
     height: 25px;
-    background-color: aliceblue;
+    background-color:aliceblue;
     border-radius: 25px;
     cursor: pointer;
 }
@@ -318,9 +318,21 @@ header .circle {
     height: 20px;
     margin: 2px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, .3);
-    z-index: 2;
+    background-color: #000;
+    z-index: 3;
     transition: all 250ms ease;
+}
+
+header .circle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(169, 169, 169);
+    border-radius: inherit;
+    transform: scale(0);
 }
 
 header .switch:active .circle {
@@ -329,11 +341,27 @@ header .switch:active .circle {
 
 header .input:checked + .circle {
     left: 30px;
-    background-color: var(--other-blue);
+    background-color: #000;
+}
+
+header .input:checked + .circle::after {
+    animation: switch-pulse 1s ease-out;
 }
 
 header .media-list {
     display: none;
+}
+
+@keyframes switch-pulse {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2.3);
+        opacity: .1;
+    }
 }
 
 
@@ -454,8 +482,8 @@ footer > p {
         justify-content: center;
     }
 
-     header .media-list i:hover {
-         background-color: var(--bg-color);
-     }
+    header .media-list i:hover {
+        background-color: var(--bg-color);
+    }
 
 }
