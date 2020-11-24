@@ -35,7 +35,7 @@ Circle.prototype.update = function() {
 
 let circleArray = [];
 
-for (let i = 0; i < 80; i++) {
+for (let i = 0; i < 100; i++) {
    //Generate random positions for x and y axis, as well as random velocities.
    let x = Math.random() * banner.offsetWidth;
    let y = Math.random() * banner.offsetHeight;
