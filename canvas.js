@@ -47,7 +47,7 @@ for (let i = 0; i < 80; i++) {
 }
 
 function animate() {
-   ctx.clearRect(0, 0, banner.offsetWidth, banner.offsetWidth);
+   ctx.clearRect(0, 0, banner.offsetWidth, banner.offsetHeight);
    requestAnimationFrame(animate);
    for(let i = 0; i < circleArray.length; i++) {
       circleArray[i].update();
