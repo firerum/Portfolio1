@@ -19,6 +19,12 @@ window.addEventListener("mousemove", function(e) {
    mouse.y = e.y;
 });
 
+// Add touch event for moible users
+window.addEventListener("touchmove", function(e) {
+   mouse.x = e.x;
+   mouse.y = e.y;
+})
+
 // Write constructor Object to create many circles;
 function Circle(x, y, dx, dy, radius) {
    this.x = x;
