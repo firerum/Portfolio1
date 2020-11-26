@@ -73,22 +73,14 @@ let circleArray = [];
 
 for (let i = 0; i < 100; i++) {
    //Generate random positions for x and y axis, as well as random velocities.
-   let x = Math.random() * banner.offsetWidth;
-   let y = Math.random() * banner.offsetHeight;
+   const radius = 10;
+   let x = Math.random() * (banner.offsetWidth - radius * 2) + radius; //To stop circle from getting stuck at the edge of the canvas
+   let y = Math.random() * (banner.offsetHeight - radius * 2) + radius;
    let dy = Math.random() * 0.2;
    let dx = Math.random() * 0.2;
-   const radius = 10;
    // Push the new object circles into the array.
    circleArray.push(new Circle(x, y, dx, dy, radius));
 }
-// Redestribute circles on window resize
-window.addEventListener("resize", function() {
-   canvas.width = banner.offsetWidth;
-   canvas.height = banner.offsetHeight;
-   for(let i = 0; i < circleArray.length; i++) {
-      circleArray[i].draw();
-   }
-});
 
 function animate() {
    ctx.clearRect(0, 0, banner.offsetWidth, banner.offsetHeight);
@@ -100,3 +92,11 @@ function animate() {
 
 animate();
 
+// Redestribute circles on window resize
+window.addEventListener("resize", function() {
+   canvas.width = banner.offsetWidth;
+   canvas.height = banner.offsetHeight;
+   for(let i = 0; i < circleArray.length; i++) {
+      circleArray[i].draw();
+   }
+});
