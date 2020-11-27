@@ -1,5 +1,7 @@
 const canvas = document.getElementById("canvas");
 const banner = document.getElementById("header-canvas");
+canvas.width = banner.offsetWidth;
+canvas.height = banner.offsetHeight;
 const ctx = canvas.getContext("2d");
 
 // Give the circles random colors
