@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 
 
 // Give the circles random colors
-let colorArray = ["skyblue", "#f9f871", "#57DFC2", "#d65db1"];
+let colorArray = ["#F25CA2", "#0433BF", "#032CA6", "#021859", "#0B9ED9"];
 
 // Create a mouse object to detect the mouse position
 let mouse = {
@@ -19,12 +19,6 @@ window.addEventListener("mousemove", function(e) {
    mouse.y = e.y;
 });
 
-// Add touch event for moible users
-window.addEventListener("touchmove", function(e) {
-   mouse.x = e.x;
-   mouse.y = e.y;
-})
-
 // Write constructor Object to create many circles;
 function Circle(x, y, dx, dy, radius) {
    this.x = x;
@@ -32,6 +26,7 @@ function Circle(x, y, dx, dy, radius) {
    this.dx = dx;
    this.dy = dy;
    this.radius = radius;
+   this.minRadius = radius;
    this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
 }
 
@@ -64,8 +59,11 @@ Circle.prototype.update = function() {
             this.radius -= 1;
          }
          this.radius += 1;
-   } else if(this.radius > 10) {
+   } /* else if(this.radius > this.minRadius) {
       this.radius -= 1;
+   } */
+   else {
+      this.radius = this.minRadius; // Return back to original radius;
    }
 };
 
@@ -74,7 +72,7 @@ let circleArray = [];
 function init() {
    for (let i = 0; i < 100; i++) {
    //Generate random positions for x and y axis, as well as random velocities.
-   const radius = 10;
+   let radius = Math.random() * 10;
    let x = Math.random() * (banner.offsetWidth - radius * 2) + radius; //To stop circle from getting stuck at the edge of the canvas
    let y = Math.random() * (banner.offsetHeight - radius * 2) + radius;
    let dy = Math.random() * 0.2;
@@ -102,5 +100,18 @@ window.addEventListener("resize", function() {
    canvas.height = banner.offsetHeight;
    // Empty the array and refill it each time the window is resized.
    circleArray = [];
-   init();
+   if(banner.offsetWidth > 500)
+      for (let i = 0; i < 250; i++) {
+      //Generate random positions for x and y axis, as well as random velocities.
+      const radius = Math.random() * 10;
+      let x = Math.random() * (banner.offsetWidth - radius * 2) + radius; //To stop circle from getting stuck at the edge of the canvas
+      let y = Math.random() * (banner.offsetHeight - radius * 2) + radius;
+      let dy = Math.random() * 0.2;
+      let dx = Math.random() * 0.2;
+      let minRadius = radius;
+      // Push the new object circles into the array.
+      circleArray.push(new Circle(x, y, dx, dy, radius));
+   } else {
+      init();
+   }
 });
