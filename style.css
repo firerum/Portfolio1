@@ -123,6 +123,9 @@ button {
     width: calc(100% - 40px);
    /*  max-width: 1020px; */
     margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -147,7 +150,7 @@ button {
     text-transform: capitalize;
     text-decoration: none;
     position: relative;
-    padding-bottom: 0.2em;
+    padding-bottom: 0.4em;
     font-weight: 700;
     font-size: 1rem;
     color: transparent;
@@ -194,7 +197,7 @@ button {
 .banner-logo .hamburger > div {
     position: relative;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-image: var(--bg-gradient);
     background-size: 150%;
     background-position: left;
@@ -207,10 +210,10 @@ button {
     content: "";
     position: absolute;
     top: -6.5px;
-    width: 50%;
+    width: 100%;
     height: 100%;
     background-image: inherit;
-    border-radius: inherit;
+    border-radius: 50%;
     transition: transform 800ms ease;
 }
 
@@ -229,7 +232,7 @@ button {
 
 .banner-logo #toggler:checked + .hamburger > div::before,
 .banner-logo #toggler:checked + .hamburger > div::after {
-    left: 25%;
+    top: 0;
     transform: rotate(90deg);
     transition: transform 600ms ease;
 }
@@ -253,23 +256,21 @@ button {
     align-items: center;
 }
 
-.banner-logo li {
+.banner-logo .main-nav li {
     padding: 0.5em 0;
     display: flex;
     justify-content: center;
     align-items: center; 
     opacity: .8;  
     margin-bottom: 3em;
-}
-
-.banner-logo li:last-child {
-    margin-bottom: 0;
+    transform: translateX(-500%);
+    transition: transform 600ms ease;
 }
 
 .banner-logo .main-nav a::after {
     content: "";
     background-color: #f9f871;
-    border-radius: 4px;
+    border-radius: 50%;
     height: 2px;
     width: 100%;
     position: absolute;
@@ -282,6 +283,35 @@ button {
 .banner-logo .main-nav a:hover::after,
 .banner-logo .main-nav a:focus::after {
     transform: scaleX(1);
+}
+
+.banner-logo .main-nav li:first-child {
+    transition-delay: 100ms;  
+}
+
+.banner-logo .main-nav li:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.banner-logo .main-nav li:nth-child(3) {
+    transition-delay: 300ms;
+}
+
+.banner-logo .main-nav li:nth-child(4) {
+    transition-delay: 400ms;
+}
+
+.banner-logo .main-nav li:nth-child(5) {
+    transition-delay: 500ms;
+}
+
+.banner-logo .main-nav li:last-child {
+    transition-delay: 600ms;
+    margin-bottom: 0;
+}
+    
+.banner-logo #toggler:checked ~ .main-nav li {
+    transform: translateX(0);
 }
 
 header {
@@ -371,6 +401,7 @@ header .media-list {
 footer {
     /* margin-top: 30%; */
     margin: 0 -20px;
+    margin-top: auto;
     color: #fff;
     background-color: var(--bg-color);
     text-align: center;
@@ -452,12 +483,13 @@ footer > p {
         align-items: center;
     }
 
-    .banner-logo li {
+    .banner-logo .main-nav li {
         padding: 0;
         margin-bottom: 0;
+        transform: translateX(0);
     }
 
-    .banner-logo li:last-child {
+    .banner-logo .main-nav li:last-child {
         margin-right: 40px;
     }
 
